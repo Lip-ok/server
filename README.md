@@ -12,13 +12,13 @@ const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 // Создаём объект для отправки 
-const raw = JSON.stringify({
+## const raw = JSON.stringify({
   "username": "test",
   "password": "test"
 });
 
 // Создаём объект параметров запроса
-const requestOptions = {
+## const requestOptions = {
   method: "POST",
   headers: myHeaders,
   body: raw,
@@ -26,7 +26,7 @@ const requestOptions = {
 };
 
 // Отправляем запрос 
-fetch("http://localhost:8080/login", requestOptions)
+## fetch("http://localhost:8080/login", requestOptions)
   .then((response) => response.text())
   .then((result) => console.log(result))
   .catch((error) => console.error(error));
