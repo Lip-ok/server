@@ -54,10 +54,10 @@ app.post('/login', (req, res) => {
     if (username === 'test' && password === 'test') {
         // Генерация токена
         const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: '1h' });
-        return res.json({ token });
+        return res.json({ token, status: 200 });
     }
 
-    return res.status(401).json({ message: 'Неверные учетные данные' });
+    return res.status(401).json({ message: 'Неверные учетные данные', status: 401 });
 });
 
 // Запуск сервера
